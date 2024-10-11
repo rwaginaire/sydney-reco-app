@@ -1,0 +1,110 @@
+<resources>
+    <string name="app_name">Sydney</string>
+    <string name="category_1">Coffee Shops</string>
+    <string name="category_2">Restaurants</string>
+    <string name="category_3">Kid-friendly Places</string>
+    <string name="category_4">Parks</string>
+    <string name="category_5">Shopping Centers</string>
+    <string name="coffee_shop_1_name">Batch Espresso</string>
+    <string name="coffee_shop_2_name">Brew Collective Coffee</string>
+    <string name="coffee_shop_3_name">Leible Coffee</string>
+    <string name="coffee_shop_4_name">Locantro Bakery</string>
+    <string name="restaurant_1_name">Thai Pothong</string>
+    <string name="restaurant_2_name">Ippudo</string>
+    <string name="restaurant_3_name">Spice I Am</string>
+    <string name="restaurant_4_name">Moretti Italian Restaurant</string>
+    <string name="restaurant_5_name">678 Korean BBQ</string>
+    <string name="kid_friendly_place_1_name">Luna Park</string>
+    <string name="kid_friendly_place_2_name">Strike Bowling Darling Harbour</string>
+    <string name="kid_friendly_place_3_name">KOKO Amusement</string>
+    <string name="kid_friendly_place_4_name">Event Cinemas</string>
+    <string name="park_1_name">Hyde Park</string>
+    <string name="park_2_name">Moore Park</string>
+    <string name="park_3_name">Royal Botanic Garden</string>
+    <string name="park_4_name">Victoria Park</string>
+    <string name="park_5_name">Barangaroo Reserve</string>
+    <string name="shopping_center_1_name">World Square</string>
+    <string name="shopping_center_2_name">Westfield Sydney</string>
+    <string name="shopping_center_3_name">DFO Homebush</string>
+    <string name="shopping_center_4_name">MarketPlace Leichhardt</string>
+    <string name="coffee_shop_1_desc">At Batch, we\'re passionate about serving up Sydney exceptional coffee and a menu of local, wholesome flavours - all in the heart of the busy CBD.
+\nPick up your favourite breakfast and lunch items like a handmade pastry and coffee, or freshly made sandwiches and salads all on the go, or sit down with a colleague or client for a cup of Batch coffee perfection.
+</string>
+    <string name="coffee_shop_2_desc">Brew Collective sits behind a huge glass window off the Wynyard Walk, which leads from Wynyard station to the corporate strip on Kent Street. Opposite the Westpac building, it has high bench seating, copies of the Financial Review on-hand and rows of takeaway chia pots, cups of granola and bacon-and-egg rolls for people rushing to work. The minimal design reflects the in-and-out nature of the cafe; no one has time to linger and look at knick-knacks here.
+\n
+\nOwner Saxon Griese is also behind Charlie Coffee, which also supplies the coffee beans. He has brought a range of brewing methods to the new corporate area with his brand of filter coffee, batch filter and pour-over, as well as cold brew and iced tea. The beans are all ethically sourced.
+\n
+\nThe cafe stocks breakfast and lunch by the Wooden Whisk\'s Sean Flanagan, and pastries from St Malo Bakery and Little Secrets Bakehouse. There’s a range of Tea Craft teas, Where the Wild Things Grow smoothies and Botanica cold-press juices.
+</string>
+    <string name="coffee_shop_3_desc">Our mission is to enable our friends and customers to enjoy the most delicious specialty coffee from all over the world daily. We achieve this through the knowledge of our Founder and Head Roaster, Australia\'s first World Cup Tasters champion Yama (Jinwoo) Kim.</string>
+    <string name="coffee_shop_4_desc">Locantro’s recent renovation has transformed its Catherine Street store into an Italian Wonderland.
+\nWith our extensive stock list of freshly made focaccias, pizzas, paninis, pastries, cakes and handmade products one will be transported to a local emporium of Italian delights!
+\n
+\nVisitors may come for breakfast or a coffee but then leave with a range of exquisitely made produce like our freshly baked ‘Filloni’ or a variety of sweet or savoury pastries for afternoon tea.
+\n
+\nWe are dedicated to offering the best products at the lowest possible price points. Locantro offers a diverse selection of unique Italian and French inspired quality food and drinks.</string>
+    <string name="restaurant_1_desc">Sawasdee krab and welcome to Thai Pothong, voted the Best Thai Restaurant in Sydney 4 years in a row.
+\nThe iconic Thai Pothong restaurant located in the Sydney’s Newtown district has been a favourite for over 20 years. Its reputation for authentic Thai food, impeccable Thai service, and a truly Thai ambiance is the recipe for a truly Thai experience.
+\n
+\nOver the years, we have expanded and opened a takeaway shop called \'Thai Ways\' located at Newtown train station.
+</string>
+    <string name="restaurant_2_desc">Japanese Wonder to the World.
+\nSince its founding, IPPUDO has been focussing on creating a new ramen culture in Japan.
+\nStarting with ramen, IPPUDO plans to introduce Japan\'s beloved gastronomic culture to the world - where people can enjoy, understand and appreciate the Japanese food and culture.
+\nContinuing to thrill the world through Japanese cuisine, IPPUDO seeks to bring smiles for the generations to come.
+</string>
+    <string name="restaurant_3_desc">TripAdvisor review: “Still serving the most wonderfully delicious food. Snapper with Three Flavours, the soft-shell crab green mango salad were gorgeous, and absolutely zinging with taste. But the signature dish crispy pork belly was out of this world. I don’t know how they do it (actually I do, as my son bought me their cookbook and that’s jaw-dropping, too). Chilli hot and spicy, crunchy, flavour bombs! Perfect meal.”</string>
+    <string name="restaurant_4_desc">Simplicity is the ultimate sophistication. Real Italian food is about simplicity. The focus is on sourcing the most exquisite produce possible. For the experience to be complete, our wines are from small boutique vineyards that focus on quality above quantity and match our foods to perfection. Let us take you there…</string>
+    <string name="restaurant_5_desc">678 Sydney Korean BBQ may look like a generic franchise, but trust us, it is far from it. Don’t believe us? Then take a look at their in-house butchery, while a concise selection of meats, is of the highest quality, with most cuts of beef at a marbling score of 8 plus and sourced from internally renowned Wagyu farms. Their banchan is all handmade and packed full of flavour, no imported fish cake or packaged goods here.
+\n
+\nWith high end extractor fans, your clothes won’t be left stinking of smoke, but you’ll still get the full Korean experience. Although 678 Sydney’s interior is pretty plain, you know that means the effort has gone solely into the food quality. Believe us yet? Then go try out Sydney’s best Korean BBQ!
+</string>
+    <string name="kid_friendly_place_1_desc">Experience the Magic at Luna Park Sydney! Built in the 1930s, Luna Park is a harbour-side amusement park that still contains traditional midway games and rides. The Park is open year-round; generally every day during NSW School Holidays, and Friday to Monday during the school term. It is advised to check their website for current opening hours. Entry to the park is completely free, and the best way to experience the rides is to purchase an unlimited rides pass. Buy your tickets online and you are guaranteed to save money.</string>
+    <string name="kid_friendly_place_2_desc">Strike bowling Darling Harbour is located in the stunning surrounds of Sydney Harbour, and promises a bowling experience like no other.
+\n
+\nStart your night with a cocktail at our waterside bar, grab a delicious old-school sanga, and then move to one of the 10 bowling alleys.
+\n
+\nWith bowling, karaoke and escape rooms our Darling Harbour venue is fully-fitted with all the fun you can handle.
+</string>
+    <string name="kid_friendly_place_3_desc">KOKO Entertainment is not just a place for entertainment, but it helps your children learn how to socialize, watch as their physical and mental abilities grow. Parents can also spend time with children playing, giving families an opportunity to work together.
+\n
+\nPerfect for kids of all ages, KOKO Amusement is a place must-visit for your next family day.
+</string>
+    <string name="kid_friendly_place_4_desc">More than ever, people need a reason to switch off from the chaos of their day-to-day lives; from social media, emails, news, politics.
+\n
+\nEvent Cinemas gives you an escape from the ‘real world’. With a different world behind every door, people can immerse themselves in new experiences, from the luxury of Gold Class or the epicness of 4DX, to the fun of Junior.
+\n
+\nNever Sit Still worked with Landor Australia to create a suite of motion assets for Event Cinemas\' new brand, including a Motion Toolkit, Motion Guidelines, Pre-Film Idents, and a Launch Video.
+\n
+\nWith the re-branding of Event Cinemas, eight new cinemas are on offer for a more immersive experience, and every asset we produced needed to reflect the personality of these different cinemas. From animated typography and patterns, right through to 3D sculptures and backgrounds, each cinema experience was considered with motion made to match.
+</string>
+    <string name="park_1_desc">Australia’s oldest park is also one of its most well-known. Hyde Park offers 16 hectares of wide open space in the heart of central Sydney.</string>
+    <string name="park_2_desc">From watching a major sporting match and browsing farmers\' markets to going horse riding, playing golf and enjoying a range of fun indoors activities, Moore Park has it all. This entertainment, dining and leisure hub spans 115 hectares and includes the serene Centennial Parklands, all only a stone’s throw from the city centre.</string>
+    <string name="park_3_desc">Your oasis in the heart of Sydney, with views of the harbour. Make a day of it with the family, relax with friends or enjoy some me time at Australia\'s oldest botanic garden.</string>
+    <string name="park_4_desc">Surrounded by shady spots, a playground, swimming pool and cafe, this park is a great way to relax and enjoy the outdoors.</string>
+    <string name="park_5_desc">Barangaroo Reserve is a symbol of the precinct’s transformation from a transformed industrial area to a spectacular harbourside precinct.
+\n
+\nThe Reserve recreates a headland that existed before European arrival in Sydney – a place used by First Nations people for thousands of years. This re-imagining required a process of restoration, creation and construction. The result? An expansive harbourside park surrounded by Barangaroo restaurants and bars - complete with walking trails, 75,000 native trees and Sydney’s best picnics spots.
+</string>
+    <string name="shopping_center_1_desc">Explore World Square. A feast for the senses to meet, eat, shop and play. From morning coffee to evening explorations, laneways, fabulous street style and essential everyday needs, World Square is bold, bright and open late.
+\n
+\nA foodie paradise celebrating a crossroad of global cultures. Home to the infamous Din Tai Fung, Yayoi, Sydney\'s first and only Mixue and the colourful dragon tail towering above. Take your pick and sip and savour from over 40 restaurants, cafes, kiosks and bars open \'til late.
+\n
+\nWhether it’s to feed your appetite, quench your thirst or grab the holiday essentials, World Square is open, always engaging and always on.
+\n
+\nLocated on the doorstep of Sydney city, Light Rail and Town Hall train station.
+\n
+\nOpen daily with restaurants, supermarkets and pharmacy open until midnight.
+</string>
+    <string name="shopping_center_2_desc">Westfield Sydney is a world-class shopping and dining destination in the heart of Sydney city centre.
+\n
+\nHome to over 280 stores, dining precincts and the iconic Sydney Tower, Westfield Sydney is the perfect destination to spend the day solo or with friends and family.
+\n
+\nExplore several levels of luxury fashion and homegrown Australian brands before working up an appetite for some of Sydney’s finest food.
+</string>
+    <string name="shopping_center_3_desc">DFO Homebush is a two level Outlet Centre located approximately 15 kilometres west of the Sydney CBD. The Centre is home to more than 105 outlet retailers with a unique Premium Outlet Mall, housing high-end luxury fashion retailers including Burberry, Hugo Boss, Max Mara, Versace, Armani Outlet, Ferragamo, Kate Spade, Coach and Michael Kors. The centre also offers key sporting brands such as Nike, Adidas, Asics, PUMA and Champion.</string>
+    <string name="shopping_center_4_desc">MarketPlace Leichhardt is a sub-regional shopping centre located in an established trade area of Leichhardt, approximately 8km west of the Sydney CBD. The centre is owned by Active Super – Australia’s Best Green Super Fund* – and is managed by JLL. MarketPlace Leichhardt offers customers unlimited free parking spaces and is anchored by an Aldi, Target, Woolworths and a 300 seat Food Court.
+\n
+\nMarketPlace Leichhardt continually provides a fresh approach to food, fashion, dining, family and entertainment. With year-round free kids activities, cooking demonstrations, support and sponsorship of local events MarketPlace Leichhardt is truly the heart of the community.
+</string>
+</resources>
