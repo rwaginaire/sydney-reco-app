@@ -14,7 +14,6 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.sydney.R
-import com.example.sydney.data.LocalCategoriesDataProvider
 import com.example.sydney.data.LocalPlacesDataProvider
 import com.example.sydney.model.toCategory
 import com.example.sydney.ui.theme.SydneyTheme
