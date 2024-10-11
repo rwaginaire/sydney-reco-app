@@ -15,6 +15,8 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.sydney.R
 import com.example.sydney.data.LocalCategoriesDataProvider
+import com.example.sydney.data.LocalPlacesDataProvider
+import com.example.sydney.model.toCategory
 import com.example.sydney.ui.theme.SydneyTheme
 
 @Composable
@@ -25,7 +27,8 @@ fun SydneyApp() {
         }
     ) { innerPadding ->
         SelectionScreen(
-            LocalCategoriesDataProvider.appCategories,
+//            LocalCategoriesDataProvider.appCategories,
+            LocalPlacesDataProvider.places.map { it.toCategory() },
             modifier = Modifier.padding(horizontal = dimensionResource(R.dimen.padding_medium)),
             contentPadding = innerPadding
         )

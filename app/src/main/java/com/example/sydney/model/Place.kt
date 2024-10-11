@@ -11,3 +11,9 @@ data class Place(
     @DrawableRes val imageResourceId: Int,
     val categoryId: Int
 )
+
+fun Place.toCategory(): Category = Category(
+    id = id,
+    nameResourceId = nameResourceId,
+    imageResourceId = iconResourceId
+)

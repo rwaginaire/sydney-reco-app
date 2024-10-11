@@ -1,20 +1,15 @@
 package com.example.sydney.ui
 
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
-import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -26,45 +21,23 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.dp
 import com.example.sydney.R
-import com.example.sydney.data.LocalCategoriesDataProvider
 import com.example.sydney.data.LocalPlacesDataProvider
 import com.example.sydney.model.Category
-import com.example.sydney.model.toCategory
+import com.example.sydney.model.Place
 import com.example.sydney.ui.theme.SydneyTheme
 
 @Composable
-fun SelectionScreen(
-    categories: List<Category>,
-    modifier: Modifier = Modifier,
-    contentPadding: PaddingValues = PaddingValues(0.dp)
-) {
-    LazyColumn(
-        contentPadding = contentPadding,
-        verticalArrangement = Arrangement.spacedBy(dimensionResource(R.dimen.padding_medium)),
-        modifier = modifier.padding(top = dimensionResource(R.dimen.padding_medium)),
-    ) {
-        items(categories, key = { category -> category.id }) { category ->
-            CategoriesListItem(
-                category = category,
-                onItemClick = {  }
-            )
-        }
-    }
-}
-
-@Composable
-private fun CategoriesListItem(
-    category: Category,
-    onItemClick: (Category) -> Unit,
+private fun PlacesListItem(
+    place: Place,
+    onItemClick: (Place) -> Unit,
     modifier: Modifier = Modifier
 ) {
     Card(
         elevation = CardDefaults.cardElevation(),
         modifier = modifier,
         shape = RoundedCornerShape(dimensionResource(R.dimen.card_corner_radius)),
-        onClick = { onItemClick(category) }
+        onClick = { onItemClick(place) }
     ) {
         Row(
             modifier = Modifier
@@ -72,13 +45,13 @@ private fun CategoriesListItem(
                 .size(dimensionResource(R.dimen.card_image_height)),
             verticalAlignment = Alignment.CenterVertically
         ) {
-            CategoriesListImageItem(
-                category = category,
+            PlacesListImageItem(
+                place = place,
                 modifier = Modifier.size(dimensionResource(R.dimen.card_image_height))
             )
 
             Text(
-                text = stringResource(category.nameResourceId),
+                text = stringResource(place.nameResourceId),
                 style = MaterialTheme.typography.displaySmall,
                 modifier = Modifier
                     .padding(bottom = dimensionResource(R.dimen.card_text_vertical_space))
@@ -90,12 +63,12 @@ private fun CategoriesListItem(
 }
 
 @Composable
-private fun CategoriesListImageItem(category: Category, modifier: Modifier = Modifier) {
+private fun PlacesListImageItem(place: Place, modifier: Modifier = Modifier) {
     Box(
         modifier = modifier
     ) {
         Image(
-            painter = painterResource(category.imageResourceId),
+            painter = painterResource(place.iconResourceId),
             contentDescription = null,
             alignment = Alignment.Center,
             contentScale = ContentScale.Crop,
@@ -106,24 +79,11 @@ private fun CategoriesListImageItem(category: Category, modifier: Modifier = Mod
 
 @Preview(showBackground = true)
 @Composable
-fun SelectionScreenPreview() {
+fun PlacesListItemPreview() {
     SydneyTheme {
-        SelectionScreen(
-            categories = LocalCategoriesDataProvider.appCategories
-        )
-    }
-}
-
-@Preview(showBackground = true)
-@Composable
-fun SelectPlacePreview() {
-    SydneyTheme {
-        SelectionScreen(
-            categories = LocalPlacesDataProvider.places.filter {
-                it.categoryId >= 1
-            }.map {
-                it.toCategory()
-            }
+        PlacesListItem(
+            LocalPlacesDataProvider.places[1],
+            {}
         )
     }
 }
