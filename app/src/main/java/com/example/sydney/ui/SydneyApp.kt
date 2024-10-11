@@ -12,18 +12,20 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.tooling.preview.Preview
 import com.example.sydney.R
-import com.example.sydney.data.LocalDataProvider
+import com.example.sydney.data.LocalCategoriesDataProvider
+import com.example.sydney.ui.theme.SydneyTheme
 
 @Composable
 fun SydneyApp() {
     Scaffold(
         topBar = {
-            SportsAppBar()
+            SydneyAppBar()
         }
     ) { innerPadding ->
         SelectionScreen(
-            LocalDataProvider.appCategories,
+            LocalCategoriesDataProvider.appCategories,
             modifier = Modifier.padding(horizontal = dimensionResource(R.dimen.padding_medium)),
             contentPadding = innerPadding
         )
@@ -32,7 +34,7 @@ fun SydneyApp() {
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun SportsAppBar(
+fun SydneyAppBar(
     modifier: Modifier = Modifier
 ) {
     TopAppBar(
@@ -55,8 +57,17 @@ fun SportsAppBar(
 //            { Box {} }
 //        },
         colors = TopAppBarDefaults.topAppBarColors(
-            containerColor = MaterialTheme.colorScheme.primary
+            containerColor = MaterialTheme.colorScheme.primary,
+            titleContentColor = MaterialTheme.colorScheme.onPrimary
         ),
         modifier = modifier,
     )
+}
+
+@Preview(showBackground = true)
+@Composable
+fun SportsAppBarPreview() {
+    SydneyTheme() {
+        SydneyAppBar()
+    }
 }

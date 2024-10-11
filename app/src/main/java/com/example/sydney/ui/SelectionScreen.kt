@@ -27,7 +27,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.sydney.R
-import com.example.sydney.data.LocalDataProvider
+import com.example.sydney.data.LocalCategoriesDataProvider
 import com.example.sydney.model.Category
 import com.example.sydney.ui.theme.SydneyTheme
 
@@ -106,7 +106,7 @@ private fun CategoriesListImageItem(category: Category, modifier: Modifier = Mod
 fun SelectionScreenPreview() {
     SydneyTheme {
         SelectionScreen(
-            categories = LocalDataProvider.appCategories
+            categories = LocalCategoriesDataProvider.appCategories
         )
     }
 }

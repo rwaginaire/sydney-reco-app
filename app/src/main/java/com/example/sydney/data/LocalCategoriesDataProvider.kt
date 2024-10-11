@@ -2,8 +2,9 @@ package com.example.sydney.data
 
 import com.example.sydney.R
 import com.example.sydney.model.Category
+import com.example.sydney.model.Place
 
-object LocalDataProvider {
+object LocalCategoriesDataProvider {
     val appCategories: List<Category> = listOf(
         Category(
             id = 1,
