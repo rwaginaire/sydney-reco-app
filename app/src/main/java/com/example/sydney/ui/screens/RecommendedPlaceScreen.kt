@@ -56,7 +56,7 @@ fun RecommendedPlaceBody(
             .padding(dimensionResource(R.dimen.padding_medium))
     ) {
         Image(
-            painter = painterResource(place.imageResourceId),
+            painter = painterResource(place.largeImageResourceId),
             contentDescription = null,
             alignment = Alignment.Center,
             contentScale = ContentScale.Crop,
@@ -66,7 +66,7 @@ fun RecommendedPlaceBody(
         )
         Text(
             text = stringResource(place.descResourceId),
-            style = MaterialTheme.typography.bodySmall
+            style = MaterialTheme.typography.bodyMedium
         )
     }
 }

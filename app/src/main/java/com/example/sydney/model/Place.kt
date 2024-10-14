@@ -4,16 +4,16 @@ import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
 
 data class Place(
-    val id: Int,
-    @StringRes val nameResourceId: Int,
+    override val id: Int,
+    @StringRes override val nameResourceId: Int,
     @StringRes val descResourceId: Int,
-    @DrawableRes val iconResourceId: Int,
-    @DrawableRes val imageResourceId: Int,
+    @DrawableRes override val imageResourceId: Int,
+    @DrawableRes val largeImageResourceId: Int,
     val categoryId: Int
-)
+) : Option()
 
-fun Place.toCategory(): Category = Category(
-    id = id,
-    nameResourceId = nameResourceId,
-    imageResourceId = iconResourceId
-)
+//fun Place.toCategory(): Category = Category(
+//    id = id,
+//    nameResourceId = nameResourceId,
+//    imageResourceId = imageResourceId
+//)

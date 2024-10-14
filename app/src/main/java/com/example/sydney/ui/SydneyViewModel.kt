@@ -4,11 +4,13 @@ import androidx.lifecycle.ViewModel
 import com.example.sydney.data.LocalCategoriesDataProvider
 import com.example.sydney.data.LocalPlacesDataProvider
 import com.example.sydney.model.Category
+import com.example.sydney.model.Option
 import com.example.sydney.model.Place
 import com.example.sydney.model.SydneyUiState
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.update
+import kotlin.reflect.typeOf
 
 class SydneyViewModel : ViewModel() {
     private val _uiState = MutableStateFlow(

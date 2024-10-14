@@ -9,15 +9,16 @@ import com.example.sydney.data.LocalCategoriesDataProvider
 import com.example.sydney.data.LocalPlacesDataProvider
 import com.example.sydney.model.Category
 import com.example.sydney.model.Place
-import com.example.sydney.model.toCategory
+import com.example.sydney.ui.SelectionScreen
 import com.example.sydney.ui.SydneyAppBar
 import com.example.sydney.ui.theme.SydneyTheme
 
 @Composable
-private fun SelectPlaceScreen(
+fun SelectPlaceScreen(
     category: Category,
     places: List<Place>,
     navigateUp: () -> Unit,
+    onPlaceClick: (Place) -> Unit,
     modifier: Modifier = Modifier
 ) {
     Scaffold(
@@ -31,8 +32,9 @@ private fun SelectPlaceScreen(
         modifier = modifier
     ) { innerPadding ->
         SelectionScreen(
-            categories = places.map { it.toCategory() },
-            contentPadding = innerPadding
+            categories = places,
+            contentPadding = innerPadding,
+            onCategoryClick = onPlaceClick
         )
     }
 }
@@ -50,7 +52,8 @@ fun PlacesListItemPreview() {
             places = LocalPlacesDataProvider.places.filter {
                 it.categoryId == 1
             },
-            navigateUp = {}
+            navigateUp = {},
+            onPlaceClick = {}
         )
     }
 }

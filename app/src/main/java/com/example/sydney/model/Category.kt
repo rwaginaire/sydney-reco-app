@@ -4,7 +4,7 @@ import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
 
 data class Category(
-    val id: Int,
-    @StringRes val nameResourceId: Int,
-    @DrawableRes val imageResourceId: Int
-)
+    override val id: Int,
+    @StringRes override val nameResourceId: Int,
+    @DrawableRes override val imageResourceId: Int
+) : Option()
