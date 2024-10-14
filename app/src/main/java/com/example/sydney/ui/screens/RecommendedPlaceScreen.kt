@@ -1,4 +1,4 @@
-package com.example.sydney.ui
+package com.example.sydney.ui.screens
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column

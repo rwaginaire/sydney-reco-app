@@ -1,4 +1,4 @@
-package com.example.sydney.ui
+package com.example.sydney.ui.screens
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
@@ -28,9 +28,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.sydney.R
 import com.example.sydney.data.LocalCategoriesDataProvider
-import com.example.sydney.data.LocalPlacesDataProvider
 import com.example.sydney.model.Category
-import com.example.sydney.model.toCategory
 import com.example.sydney.ui.theme.SydneyTheme
 
 @Composable

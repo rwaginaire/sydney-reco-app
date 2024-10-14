@@ -8,26 +8,29 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.sydney.R
-import com.example.sydney.data.LocalPlacesDataProvider
-import com.example.sydney.model.toCategory
+import com.example.sydney.ui.screens.SelectionScreen
 import com.example.sydney.ui.theme.SydneyTheme
 
 @Composable
 fun SydneyApp() {
+    val viewModel: SydneyViewModel = viewModel()
+    val uiState by viewModel.uiState.collectAsState()
     Scaffold(
         topBar = {
             SydneyAppBar()
         }
     ) { innerPadding ->
         SelectionScreen(
-//            LocalCategoriesDataProvider.appCategories,
-            LocalPlacesDataProvider.places.map { it.toCategory() },
+            categories = uiState.categories,
             modifier = Modifier.padding(horizontal = dimensionResource(R.dimen.padding_medium)),
             contentPadding = innerPadding
         )
