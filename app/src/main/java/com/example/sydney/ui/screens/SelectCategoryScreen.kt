@@ -15,6 +15,7 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -29,7 +30,29 @@ import androidx.compose.ui.unit.dp
 import com.example.sydney.R
 import com.example.sydney.data.LocalCategoriesDataProvider
 import com.example.sydney.model.Category
+import com.example.sydney.ui.SydneyAppBar
 import com.example.sydney.ui.theme.SydneyTheme
+
+@Composable
+fun SelectCategoryScreen(
+    categories: List<Category>,
+    modifier: Modifier = Modifier
+) {
+    Scaffold(
+        topBar = {
+            SydneyAppBar(
+                title = stringResource(R.string.app_name),
+                canNavigateBack = false
+            )
+        },
+        modifier = modifier
+    ) { innerPadding ->
+        SelectionScreen(
+            categories = categories,
+            contentPadding = innerPadding
+        )
+    }
+}
 
 @Composable
 fun SelectionScreen(
@@ -40,7 +63,7 @@ fun SelectionScreen(
     LazyColumn(
         contentPadding = contentPadding,
         verticalArrangement = Arrangement.spacedBy(dimensionResource(R.dimen.padding_medium)),
-        modifier = modifier.padding(top = dimensionResource(R.dimen.padding_medium)),
+        modifier = modifier.padding(dimensionResource(R.dimen.padding_medium)),
     ) {
         items(categories, key = { category -> category.id }) { category ->
             CategoriesListItem(
@@ -103,9 +126,9 @@ private fun CategoriesListImageItem(category: Category, modifier: Modifier = Mod
 
 @Preview(showBackground = true)
 @Composable
-fun SelectionScreenPreview() {
+fun SelectCategoryScreenPreview() {
     SydneyTheme {
-        SelectionScreen(
+        SelectCategoryScreen(
             categories = LocalCategoriesDataProvider.appCategories
         )
     }

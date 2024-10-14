@@ -5,6 +5,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -17,10 +18,36 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.example.sydney.R
 import com.example.sydney.data.LocalPlacesDataProvider
 import com.example.sydney.model.Place
+import com.example.sydney.ui.SydneyAppBar
 import com.example.sydney.ui.theme.SydneyTheme
 
 @Composable
 fun RecommendedPlaceScreen(
+    place: Place,
+    navigateUp: () -> Unit,
+    modifier: Modifier = Modifier
+) {
+    Scaffold(
+        topBar = {
+            SydneyAppBar(
+                title = stringResource(place.nameResourceId),
+                canNavigateBack = true,
+                navigateUp = navigateUp
+            )
+        },
+        modifier = modifier
+    ) { innerPadding ->
+        RecommendedPlaceBody(
+            place = place,
+            modifier = Modifier.padding(
+                innerPadding
+            )
+        )
+    }
+}
+
+@Composable
+fun RecommendedPlaceBody(
     place: Place,
     modifier: Modifier = Modifier
 ) {
@@ -49,7 +76,8 @@ fun RecommendedPlaceScreen(
 fun RecommendedPlaceScreenPreview() {
     SydneyTheme {
         RecommendedPlaceScreen(
-            LocalPlacesDataProvider.places[0]
+            LocalPlacesDataProvider.places[0],
+            {}
         )
     }
 }
