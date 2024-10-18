@@ -35,6 +35,8 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.sydney.R
+import com.example.sydney.data.LocalPlacesDataProvider
+import com.example.sydney.model.Category
 import com.example.sydney.model.Option
 import com.example.sydney.ui.theme.SydneyTheme
 
@@ -82,11 +84,13 @@ private fun <T: Option> CategoriesListItem(
                 modifier = Modifier.size(dimensionResource(R.dimen.card_image_height))
             )
 
+            val textStyle = if (category is Category) MaterialTheme.typography.displaySmall else MaterialTheme.typography.headlineLarge
+
             Text(
                 text = stringResource(category.nameResourceId),
-                style = MaterialTheme.typography.displaySmall,
+                style = textStyle,
                 modifier = Modifier
-                    .padding(bottom = dimensionResource(R.dimen.card_text_vertical_space))
+                    .padding(dimensionResource(R.dimen.padding_small))
                     .weight(1f),
                 textAlign = TextAlign.Center,
                 color = MaterialTheme.colorScheme.secondary
@@ -154,6 +158,17 @@ fun SportsAppBarPreview() {
         SydneyAppBar(
             title = stringResource(R.string.app_name),
             canNavigateBack = true
+        )
+    }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun CategoriesListItemPreview() {
+    SydneyTheme {
+        CategoriesListItem(
+            category = LocalPlacesDataProvider.places[10],
+            {}
         )
     }
 }

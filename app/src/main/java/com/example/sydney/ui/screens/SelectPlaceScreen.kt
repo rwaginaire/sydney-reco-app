@@ -50,7 +50,7 @@ fun PlacesListItemPreview() {
         SelectPlaceScreen(
             category = LocalCategoriesDataProvider.appCategories[0],
             places = LocalPlacesDataProvider.places.filter {
-                it.categoryId == 1
+                it.categoryId == 3
             },
             navigateUp = {},
             onPlaceClick = {}
