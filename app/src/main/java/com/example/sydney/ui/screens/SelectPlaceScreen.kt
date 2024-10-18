@@ -32,9 +32,9 @@ fun SelectPlaceScreen(
         modifier = modifier
     ) { innerPadding ->
         SelectionScreen(
-            categories = places,
+            options = places,
             contentPadding = innerPadding,
-            onCategoryClick = onPlaceClick
+            onOptionClick = onPlaceClick
         )
     }
 }

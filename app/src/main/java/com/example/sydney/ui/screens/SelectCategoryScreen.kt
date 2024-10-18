@@ -28,8 +28,8 @@ fun SelectCategoryScreen(
         modifier = modifier
     ) { innerPadding ->
         SelectionScreen(
-            categories = categories,
-            onCategoryClick = onCategoryClick,
+            options = categories,
+            onOptionClick = onCategoryClick,
             contentPadding = innerPadding
         )
     }

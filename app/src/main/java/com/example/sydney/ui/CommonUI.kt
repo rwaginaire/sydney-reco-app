@@ -35,6 +35,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.sydney.R
+import com.example.sydney.data.LocalCategoriesDataProvider
 import com.example.sydney.data.LocalPlacesDataProvider
 import com.example.sydney.model.Category
 import com.example.sydney.model.Option
@@ -42,8 +43,8 @@ import com.example.sydney.ui.theme.SydneyTheme
 
 @Composable
 fun <T: Option> SelectionScreen(
-    categories: List<T>,
-    onCategoryClick: (T) -> Unit,
+    options: List<T>,
+    onOptionClick: (T) -> Unit,
     modifier: Modifier = Modifier,
     contentPadding: PaddingValues = PaddingValues(0.dp)
 ) {
@@ -52,18 +53,18 @@ fun <T: Option> SelectionScreen(
         verticalArrangement = Arrangement.spacedBy(dimensionResource(R.dimen.padding_medium)),
         modifier = modifier.padding(dimensionResource(R.dimen.padding_medium)),
     ) {
-        items(categories, key = { category -> category.id }) { category ->
-            CategoriesListItem(
-                category = category,
-                onItemClick = onCategoryClick
+        items(options, key = { option -> option.id }) { option ->
+            OptionsListItem(
+                option = option,
+                onItemClick = onOptionClick
             )
         }
     }
 }
 
 @Composable
-private fun <T: Option> CategoriesListItem(
-    category: T,
+private fun <T: Option> OptionsListItem(
+    option: T,
     onItemClick: (T) -> Unit,
     modifier: Modifier = Modifier
 ) {
@@ -71,7 +72,7 @@ private fun <T: Option> CategoriesListItem(
         elevation = CardDefaults.cardElevation(),
         modifier = modifier,
         shape = RoundedCornerShape(dimensionResource(R.dimen.card_corner_radius)),
-        onClick = { onItemClick(category) }
+        onClick = { onItemClick(option) }
     ) {
         Row(
             modifier = Modifier
@@ -79,15 +80,15 @@ private fun <T: Option> CategoriesListItem(
                 .size(dimensionResource(R.dimen.card_image_height)),
             verticalAlignment = Alignment.CenterVertically
         ) {
-            CategoriesListImageItem(
-                category = category,
+            OptionsListImageItem(
+                option = option,
                 modifier = Modifier.size(dimensionResource(R.dimen.card_image_height))
             )
 
-            val textStyle = if (category is Category) MaterialTheme.typography.displaySmall else MaterialTheme.typography.headlineLarge
+            val textStyle = if (option is Category) MaterialTheme.typography.displaySmall else MaterialTheme.typography.headlineLarge
 
             Text(
-                text = stringResource(category.nameResourceId),
+                text = stringResource(option.nameResourceId),
                 style = textStyle,
                 modifier = Modifier
                     .padding(dimensionResource(R.dimen.padding_small))
@@ -100,12 +101,12 @@ private fun <T: Option> CategoriesListItem(
 }
 
 @Composable
-private fun <T: Option> CategoriesListImageItem(category: T, modifier: Modifier = Modifier) {
+private fun <T: Option> OptionsListImageItem(option: T, modifier: Modifier = Modifier) {
     Box(
         modifier = modifier
     ) {
         Image(
-            painter = painterResource(category.imageResourceId),
+            painter = painterResource(option.imageResourceId),
             contentDescription = null,
             alignment = Alignment.Center,
             contentScale = ContentScale.Crop,
@@ -151,7 +152,7 @@ fun SydneyAppBar(
 
 @Preview(showBackground = true)
 @Composable
-fun SportsAppBarPreview() {
+fun SydneyAppBarPreview() {
     SydneyTheme(
         darkTheme = false
     ) {
@@ -164,11 +165,22 @@ fun SportsAppBarPreview() {
 
 @Preview(showBackground = true)
 @Composable
-fun CategoriesListItemPreview() {
+fun OptionsListItemPreview() {
     SydneyTheme {
-        CategoriesListItem(
-            category = LocalPlacesDataProvider.places[10],
+        OptionsListItem(
+            option = LocalPlacesDataProvider.places[10],
             {}
+        )
+    }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun SelectionScreenPreview() {
+    SydneyTheme {
+        SelectionScreen(
+            options = LocalCategoriesDataProvider.appCategories,
+            onOptionClick = {}
         )
     }
 }
