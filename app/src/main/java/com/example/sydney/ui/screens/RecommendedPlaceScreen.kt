@@ -57,20 +57,21 @@ fun RecommendedPlaceBody(
     Column(
         modifier = modifier
             .verticalScroll(state = scrollState)
-            .padding(dimensionResource(R.dimen.padding_medium))
+//            .padding(dimensionResource(R.dimen.padding_medium))
     ) {
         Image(
             painter = painterResource(place.largeImageResourceId),
             contentDescription = null,
             alignment = Alignment.Center,
-            contentScale = ContentScale.Crop,
+            contentScale = ContentScale.FillWidth,
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(bottom = dimensionResource(R.dimen.padding_medium))
+//                .padding(bottom = dimensionResource(R.dimen.padding_medium))
         )
         Text(
             text = stringResource(place.descResourceId),
-            style = MaterialTheme.typography.bodyMedium
+            style = MaterialTheme.typography.bodyLarge,
+            modifier = Modifier.padding(dimensionResource(R.dimen.padding_medium))
         )
     }
 }
@@ -80,7 +81,7 @@ fun RecommendedPlaceBody(
 fun RecommendedPlaceScreenPreview() {
     SydneyTheme {
         RecommendedPlaceScreen(
-            LocalPlacesDataProvider.places[0],
+            LocalPlacesDataProvider.places[3],
             {}
         )
     }
