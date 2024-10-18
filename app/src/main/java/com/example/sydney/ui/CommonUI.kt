@@ -88,7 +88,8 @@ private fun <T: Option> CategoriesListItem(
                 modifier = Modifier
                     .padding(bottom = dimensionResource(R.dimen.card_text_vertical_space))
                     .weight(1f),
-                textAlign = TextAlign.Center
+                textAlign = TextAlign.Center,
+                color = MaterialTheme.colorScheme.secondary
             )
         }
     }
@@ -117,6 +118,7 @@ fun SydneyAppBar(
     navigateUp: () -> Unit = {},
     modifier: Modifier = Modifier
 ) {
+    val titleColor = MaterialTheme.colorScheme.secondary
     TopAppBar(
         title = {
             Text(
@@ -130,14 +132,14 @@ fun SydneyAppBar(
                     Icon(
                         imageVector = Icons.AutoMirrored.Filled.ArrowBack,
                         contentDescription = "Back",
-                        tint = MaterialTheme.colorScheme.onPrimary
+                        tint = titleColor
                     )
                 }
             }
         },
         colors = TopAppBarDefaults.topAppBarColors(
-            containerColor = MaterialTheme.colorScheme.primary,
-            titleContentColor = MaterialTheme.colorScheme.onPrimary
+            containerColor = MaterialTheme.colorScheme.primaryContainer,
+            titleContentColor = titleColor
         ),
         modifier = modifier,
     )

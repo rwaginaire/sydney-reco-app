@@ -38,7 +38,9 @@ fun SelectCategoryScreen(
 @Preview(showBackground = true)
 @Composable
 fun SelectCategoryScreenPreview() {
-    SydneyTheme {
+    SydneyTheme(
+        darkTheme = false
+    ) {
         SelectCategoryScreen(
             categories = LocalCategoriesDataProvider.appCategories,
             onCategoryClick = {}
