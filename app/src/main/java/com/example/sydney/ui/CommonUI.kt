@@ -56,23 +56,32 @@ fun <T: Option> SelectionScreen(
         items(options, key = { option -> option.id }) { option ->
             OptionsListItem(
                 option = option,
-                onItemClick = onOptionClick
+                onItemClick = onOptionClick,
+                selected = false
             )
         }
     }
 }
 
 @Composable
-private fun <T: Option> OptionsListItem(
+fun <T: Option> OptionsListItem(
     option: T,
     onItemClick: (T) -> Unit,
+    selected: Boolean,
     modifier: Modifier = Modifier
 ) {
     Card(
         elevation = CardDefaults.cardElevation(),
-        modifier = modifier,
         shape = RoundedCornerShape(dimensionResource(R.dimen.card_corner_radius)),
-        onClick = { onItemClick(option) }
+        onClick = { onItemClick(option) },
+        colors = CardDefaults.cardColors(
+            containerColor = if (selected) {
+                MaterialTheme.colorScheme.secondaryContainer
+            } else {
+                MaterialTheme.colorScheme.surfaceContainer
+            },
+        ),
+        modifier = modifier,
     ) {
         Row(
             modifier = Modifier
@@ -85,7 +94,7 @@ private fun <T: Option> OptionsListItem(
                 modifier = Modifier.size(dimensionResource(R.dimen.card_image_height))
             )
 
-            val textStyle = if (option is Category) MaterialTheme.typography.displaySmall else MaterialTheme.typography.headlineLarge
+            val textStyle = if (option is Category) MaterialTheme.typography.displaySmall else MaterialTheme.typography.headlineMedium
 
             Text(
                 text = stringResource(option.nameResourceId),
@@ -94,7 +103,11 @@ private fun <T: Option> OptionsListItem(
                     .padding(dimensionResource(R.dimen.padding_small))
                     .weight(1f),
                 textAlign = TextAlign.Center,
-                color = MaterialTheme.colorScheme.secondary
+                color = if (selected) {
+                    MaterialTheme.colorScheme.onSecondaryContainer
+                } else {
+                    MaterialTheme.colorScheme.secondary
+                }
             )
         }
     }
@@ -169,7 +182,8 @@ fun OptionsListItemPreview() {
     SydneyTheme {
         OptionsListItem(
             option = LocalPlacesDataProvider.places[10],
-            {}
+            selected = false,
+            onItemClick = {}
         )
     }
 }
@@ -180,7 +194,7 @@ fun SelectionScreenPreview() {
     SydneyTheme {
         SelectionScreen(
             options = LocalCategoriesDataProvider.appCategories,
-            onOptionClick = {}
+            onOptionClick = {},
         )
     }
 }
