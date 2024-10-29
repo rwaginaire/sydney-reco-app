@@ -13,6 +13,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.sydney.ui.screens.ExpandedScreen
+import com.example.sydney.ui.screens.MediumScreen
 import com.example.sydney.ui.screens.RecommendedPlaceScreen
 import com.example.sydney.ui.screens.SelectCategoryScreen
 import com.example.sydney.ui.screens.SelectPlaceScreen
@@ -72,7 +73,20 @@ fun SydneyApp(
             }
         }
         WindowWidthSizeClass.Medium -> {
-
+            MediumScreen(
+                categories = uiState.categories,
+                selectedCategory = uiState.currentCategory,
+                onCategoryClick = {
+                    viewModel.updateSelectedCategory(it)
+                },
+                recommendedPlaces = uiState.placesToChoose,
+                selectedPlace = uiState.currentPlace,
+                onPlaceClick = { place ->
+                    viewModel.updateSelectedPlace(place)
+                    navController.navigate(SydneyScreen.PlaceInfo.name)
+                },
+                navController = navController
+            )
         }
         WindowWidthSizeClass.Expanded -> {
             ExpandedScreen(
